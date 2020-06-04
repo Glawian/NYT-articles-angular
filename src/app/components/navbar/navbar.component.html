@@ -1,0 +1,38 @@
+<div class="p-grid p-dir-col">
+    <div class="p-col" style="margin-top: 1em;">
+        <div class="p-grid">
+            <div class="p-col center_items">
+                <input type="text" pInputText placeholder="Search for the articles" [(ngModel)]="searchValue">
+                <p-button label="Search" icon="pi pi-search" style="margin-left:.25em;"></p-button>
+            </div>
+        </div>
+    </div>
+    <div class="p-col" style="text-align: center;">
+        <div class="p-grid">
+            <div class="p-col center_items">
+                <div>
+                    <p>From</p>
+                    <p-calendar [(ngModel)]="dateFrom" [maxDate]="maxDate" dateFormat="dd.mm.yy"></p-calendar>
+                </div>
+                <div>
+                    <p>To</p>
+                    <p-calendar [(ngModel)]="dateTo" [maxDate]="maxDate" [minDate]="dateFrom" dateFormat="dd.mm.yy"></p-calendar>
+                </div>
+                <div>
+                    <p>Sort by date</p>
+                    <p-dropdown [options]="sorting" [(ngModel)]="selectedSorting"></p-dropdown>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-col" style="text-align: center;">
+        <div class="p-grid">
+            <div class="p-col center_items">
+                <div>
+                    <p class="first" style="margin-bottom: 1em;">Results per page: {{resultsPerPage}}</p>
+                    <p-slider [(ngModel)]="resultsPerPage" [min]="10" [max]="50" [step]="5" [style]="{'width':'14em'}"></p-slider>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
