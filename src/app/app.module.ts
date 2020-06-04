@@ -12,11 +12,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ApiRequestsService } from './services/api-requests.service';
+import { MainComponent } from './components/main/main.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent
+        NavbarComponent,
+        MainComponent,
+        DashboardComponent
     ],
     imports: [
         BrowserModule,

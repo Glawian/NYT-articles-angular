@@ -1,7 +1,12 @@
 p {
     margin: 0px;
 }
+
 .center_items {
     display: flex;
     justify-content: center;
+}
+
+.fontInherit {
+    font: inherit;
 }
