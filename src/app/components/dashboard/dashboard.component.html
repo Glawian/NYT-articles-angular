@@ -1,1 +1,25 @@
-<app-navbar></app-navbar>
+<div class="p-grid p-dir-col headerClass">
+    <div class="p-col"></div>
+    <div class="p-col" style="padding: 0;">
+        <div class="p-col">
+            <div class="p-col center_items">
+                <form (ngSubmit)="sendRequest($event)">
+                    <input class="fontInherit" type="text" pInputText placeholder="Search for the articles">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="p-col" style="padding: 0;">
+        <div class="p-col center_items">
+            <div>
+                <p-calendar class="fontInherit" [(ngModel)]="dateFrom" [maxDate]="maxDate" dateFormat="dd.mm.yy" placeholder="From"></p-calendar>
+            </div>
+            <div style="margin-left: 10px;">
+                <p-calendar class="fontInherit" [(ngModel)]="dateTo" [maxDate]="maxDate" [minDate]="dateFrom" dateFormat="dd.mm.yy" placeholder="To">
+                </p-calendar>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-articles [searchValue]="searchValue" [dateFrom]="dateFrom" [dateTo]="dateTo"></app-articles>

@@ -15,14 +15,14 @@ export class ApiRequestsService {
   constructor(private http: HttpClient) { }
 
   FormatDateFrom(dateFrom) {
-    let dayFrom = ("0" + dateFrom.getDate()).slice(-2);
-    let monthFrom = ("0" + (dateFrom.getMonth() + 1)).slice(-2);
+    const dayFrom = ('0' + dateFrom.getDate()).slice(-2);
+    const monthFrom = ('0' + (dateFrom.getMonth() + 1)).slice(-2);
     return dateFrom.getFullYear() + (monthFrom) + (dayFrom);
   }
 
   FormatDateTo(dateTo) {
-    let dayTo = ("0" + dateTo.getDate()).slice(-2);
-    let monthTo = ("0" + (dateTo.getMonth() + 1)).slice(-2);
+    const dayTo = ('0' + dateTo.getDate()).slice(-2);
+    const monthTo = ('0' + (dateTo.getMonth() + 1)).slice(-2);
     return dateTo.getFullYear() + (monthTo) + (dayTo);
   }
 
@@ -31,15 +31,15 @@ export class ApiRequestsService {
 
     if (dateFrom) {
       dateFrom = this.FormatDateFrom(dateFrom);
-      this.from = `&begin_date=${dateFrom}`
-    } else { this.from = ''; };
+      this.from = `&begin_date=${dateFrom}`;
+    } else { this.from = ''; }
 
     if (dateTo) {
       dateTo = this.FormatDateTo(dateTo);
-      this.to = `&end_date=${dateTo}`
+      this.to = `&end_date=${dateTo}`;
     } else { this.to = ''; }
 
     this.sort = sort;
-    return this.http.get(`${service}?fl=headline,web_url${this.from}${this.to}${this.value}&sort=${this.sort}&api-key=${this.token}`);
+    return this.http.get(`${service}?fl=abstract,headline,web_url${this.from}${this.to}${this.value}&sort=${this.sort}&api-key=${this.token}`);
   }
 }

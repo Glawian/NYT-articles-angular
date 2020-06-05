@@ -10,17 +10,19 @@ import { SliderModule } from 'primeng/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { ApiRequestsService } from './services/api-requests.service';
 import { MainComponent } from './components/main/main.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { SingleArticleComponent } from './components/single-article/single-article.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent,
         MainComponent,
-        DashboardComponent
+        DashboardComponent,
+        ArticlesComponent,
+        SingleArticleComponent
     ],
     imports: [
         BrowserModule,
