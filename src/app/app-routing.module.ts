@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { OopsComponent } from './components/oops/oops.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: '**',
+    component: OopsComponent
   }
 ];
 

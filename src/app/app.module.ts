@@ -15,6 +15,7 @@ import { MainComponent } from './components/main/main.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { SingleArticleComponent } from './components/single-article/single-article.component';
+import { OopsComponent } from './components/oops/oops.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { SingleArticleComponent } from './components/single-article/single-artic
         MainComponent,
         DashboardComponent,
         ArticlesComponent,
-        SingleArticleComponent
+        SingleArticleComponent,
+        OopsComponent
     ],
     imports: [
         BrowserModule,
