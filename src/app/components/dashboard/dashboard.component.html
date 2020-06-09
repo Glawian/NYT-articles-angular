@@ -1,22 +1,24 @@
-<div class="p-grid p-dir-col headerClass">
-    <div class="p-col"></div>
-    <div class="p-col" style="padding: 0;">
-        <div class="p-col">
-            <div class="p-col center_items">
+<div class="p-grid headerClass">
+    <div class="p-col-1" style="text-align: center;">
+        <h2 style="margin: 15% 0 0 10%;">
+            NYT
+        </h2>
+        <h5 style="margin: 0 0 0 10%;">
+            Article Search
+        </h5>
+    </div>
+    <div class="p-col-10">
+        <div class="p-grid">
+            <div class="p-col-12 center_items" style="margin-top: 20px;">
                 <form (ngSubmit)="sendRequest($event)">
                     <input class="fontInherit" type="text" pInputText placeholder="Search for the articles">
                 </form>
             </div>
-        </div>
-    </div>
-    <div class="p-col" style="padding: 0;">
-        <div class="p-col center_items">
-            <div>
-                <p-calendar class="fontInherit" [(ngModel)]="dateFrom" [maxDate]="maxDate" dateFormat="dd.mm.yy" placeholder="From"></p-calendar>
-            </div>
-            <div style="margin-left: 10px;">
-                <p-calendar class="fontInherit" [(ngModel)]="dateTo" [maxDate]="maxDate" [minDate]="dateFrom" dateFormat="dd.mm.yy" placeholder="To">
-                </p-calendar>
+            <div class="p-col-12 center_items">
+                <p-calendar class="fontInherit" [(ngModel)]="dateFrom" [maxDate]="maxDate" dateFormat="dd.mm.yy"
+                    placeholder="From"></p-calendar>
+                <p-calendar class="fontInherit" [(ngModel)]="dateTo" [maxDate]="maxDate" [minDate]="dateFrom"
+                    dateFormat="dd.mm.yy" placeholder="To" style="margin-left: 5%;"></p-calendar>
             </div>
         </div>
     </div>

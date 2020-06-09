@@ -1,21 +1,19 @@
-<div class="p-grid">
-    <div class="p-col"></div>
-    <div class="p-col-fixed" style="width:500px">
-        <div class="p-col">
-            <p style="text-align: center; padding-top: 10px;">Results for {{ searchValue }}</p>
+<div style="width: 80%; margin: 7px auto;">
+    <div class="p-grid">
+        <div class="p-col-12 p-md-6 p-lg-8">
+            <p style="padding-top: 10px;">Results for {{ searchValue }}</p>
         </div>
-    </div>
-    <div class="p-col">
-        <div style="padding-left: 50px; padding-top: 10px;">
+        <div class="p-col-12 p-md-6 p-lg-4" style="padding-top: 5px;">
             <p style="font-size: 16px;">Sort by</p>
             <p-dropdown [options]="sorting" [(ngModel)]="selectedSorting" (onChange)="changeSorting()"></p-dropdown>
         </div>
     </div>
 </div>
-<div class="p-grid" style="margin-top: 10px;">
-    <div class="p-col-2"></div>
-    <div class="p-col-8">
+<div>
+    <div style="width: 80%; margin: 0 auto;">
         <app-single-article *ngFor="let article of articlesArray" [article]="article"></app-single-article>
+        <div style="margin-top: 5px; margin-bottom: 5px; background-color: #f5f5f5;">
+            <p-paginator [rows]="10" [totalRecords]="1000" (onPageChange)="paginate($event)" [pageLinkSize]="4"></p-paginator>
+        </div>
     </div>
-    <div class="p-col-2"></div>
 </div>

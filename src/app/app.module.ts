@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { SliderModule } from 'primeng/slider';
+import { PaginatorModule } from 'primeng/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { OopsComponent } from './components/oops/oops.component';
         CalendarModule,
         DropdownModule,
         SliderModule,
+        PaginatorModule,
         AppRoutingModule
     ],
     providers: [ApiRequestsService],

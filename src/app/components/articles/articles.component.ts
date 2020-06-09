@@ -15,6 +15,7 @@ export class ArticlesComponent implements OnInit, OnChanges {
   articles;
   articlesArray;
   selectedSorting = 'newest';
+  page = 0;
 
   constructor(private api: ApiRequestsService) { }
 
@@ -27,20 +28,27 @@ export class ArticlesComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.dateFrom || changes.dateTo || changes.searchValue) {
-      this.api.load(this.searchValue, this.selectedSorting, this.dateFrom, this.dateTo).subscribe(data => {
+      this.api.load(this.searchValue, this.selectedSorting, this.page, this.dateFrom, this.dateTo).subscribe(data => {
         this.articles = data;
         this.articlesArray = this.articles.response.docs;
-        console.log(this.articlesArray);
       });
     }
   }
 
   changeSorting() {
-    this.api.load(this.searchValue, this.selectedSorting, this.dateFrom, this.dateTo).subscribe(data => {
+    this.api.load(this.searchValue, this.selectedSorting, this.page, this.dateFrom, this.dateTo).subscribe(data => {
       this.articles = data;
       this.articlesArray = this.articles.response.docs;
-      console.log(this.articlesArray);
     });
+  }
+
+  paginate(event) {
+    this.page = event.page;
+    this.api.load(this.searchValue, this.selectedSorting, this.page, this.dateFrom, this.dateTo).subscribe(data => {
+      this.articles = data;
+      this.articlesArray = this.articles.response.docs;
+    });
+    window.scroll(0,0);
   }
 
 }

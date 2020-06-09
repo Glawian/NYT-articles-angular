@@ -3,12 +3,3 @@ p {
     font-weight: bold;
     font-size: 26px;
 }
-
-.center_items {
-    display: flex;
-    justify-content: center;
-}
-
-.fontInherit {
-    font: inherit;
-}

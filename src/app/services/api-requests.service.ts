@@ -26,7 +26,7 @@ export class ApiRequestsService {
     return dateTo.getFullYear() + (monthTo) + (dayTo);
   }
 
-  load(value: string, sort: string, dateFrom?: any, dateTo?: any) {
+  load(value: string, sort: string, page?: number, dateFrom?: any, dateTo?: any) {
     value ? this.value = `&q=${value}` : this.value = '';
 
     if (dateFrom) {
@@ -40,6 +40,6 @@ export class ApiRequestsService {
     } else { this.to = ''; }
 
     this.sort = sort;
-    return this.http.get(`${service}?fl=abstract,headline,web_url${this.from}${this.to}${this.value}&sort=${this.sort}&api-key=${this.token}`);
+    return this.http.get(`${service}?fl=abstract,headline,web_url&page=${page}${this.from}${this.to}${this.value}&sort=${this.sort}&api-key=${this.token}`);
   }
 }

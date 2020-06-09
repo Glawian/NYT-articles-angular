@@ -1,9 +1,23 @@
-<div class="center">
-    <form (submit)="sendRequest()">
-        <span class="ui-inputgroup-addon"><i class="pi pi-search" style="font-size: 2em;"></i></span>
-        <span class="ui-float-label">
-        <input id="float-input" type="text" pInputText [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" size="50"> 
-        <label for="float-input">Search for the articles</label>
-        </span>
-    </form>
+<div>
+    <div class="p-grid" style="text-align: center;">
+        <div class="p-col-fixed" style="width: 100px;">
+            <h2 style="margin: 15% 0 0 10%;">
+                NYT
+            </h2>
+            <h5 style="margin: 0 0 0 10%;">
+                Article Search
+            </h5>
+        </div>
+    </div>
+    <div class="center">
+        <form (submit)="sendRequest()">
+            <span class="ui-inputgroup-addon"><i class="pi pi-search" style="font-size: 2em;"></i></span>
+            <span class="ui-float-label">
+                <input id="float-input" type="text" pInputText [(ngModel)]="searchValue"
+                    [ngModelOptions]="{standalone: true}">
+                <label for="float-input">Search for the articles</label>
+            </span>
+        </form>
+    </div>
 </div>
+
