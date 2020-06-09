@@ -10,8 +10,8 @@
         </div>
     </div>
     <div class="center">
+        <span class="ui-inputgroup-addon"><i class="pi pi-search" style="font-size: 2em;"></i></span>
         <form (submit)="sendRequest()">
-            <span class="ui-inputgroup-addon"><i class="pi pi-search" style="font-size: 2em;"></i></span>
             <span class="ui-float-label">
                 <input id="float-input" type="text" pInputText [(ngModel)]="searchValue"
                     [ngModelOptions]="{standalone: true}">

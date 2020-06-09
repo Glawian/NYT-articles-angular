@@ -12,7 +12,7 @@
 <div>
     <div style="width: 80%; margin: 0 auto;">
         <app-single-article *ngFor="let article of articlesArray" [article]="article"></app-single-article>
-        <div style="margin-top: 5px; margin-bottom: 5px; background-color: #f5f5f5;">
+        <div style="margin-top: 5px; margin-bottom: 5px; background-color: #f5f5f5;" *ngIf="articlesArray">
             <p-paginator [rows]="10" [totalRecords]="1000" (onPageChange)="paginate($event)" [pageLinkSize]="4"></p-paginator>
         </div>
     </div>
