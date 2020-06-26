@@ -14,6 +14,7 @@ export class ArticlesComponent implements OnInit, OnChanges {
   sorting: SelectItem[];
   articles;
   articlesArray;
+  articlesLength: number;
   selectedSorting = 'newest';
   page = 0;
 
@@ -30,6 +31,7 @@ export class ArticlesComponent implements OnInit, OnChanges {
     if (changes.dateFrom || changes.dateTo || changes.searchValue) {
       this.api.load(this.searchValue, this.selectedSorting, this.page, this.dateFrom, this.dateTo).subscribe(data => {
         this.articles = data;
+        (this.articles.response.meta.hits <= 1000) ? this.articlesLength = this.articles.response.meta.hits : this.articlesLength = 1000;
         this.articlesArray = this.articles.response.docs;
       });
     }

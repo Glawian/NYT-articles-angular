@@ -7,9 +7,11 @@ import { Injectable } from '@angular/core';
 export class LocalStorageService {
   get(searchValue: string, fallback: any) {
     let value = localStorage.getItem(searchValue);
-    return (value) ? JSON.parse(value) : fallback;
+    return (value !== 'undefined' && value) ? JSON.parse(value) : fallback;
   }
+
   set(searchValue: string, value: any) {
     localStorage.setItem(searchValue, JSON.stringify(value));
   }
+
 }
