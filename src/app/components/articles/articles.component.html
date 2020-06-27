@@ -1,7 +1,7 @@
 <div style="width: 80%; margin: 7px auto;">
     <div class="p-grid">
         <div class="p-col-12 p-md-6 p-lg-8">
-            <p style="padding-top: 10px;">Results for {{ searchValue }}</p>
+            <p style="padding-top: 10px;" *ngIf="articlesLength != 0">Results for {{ searchValue }}</p>
         </div>
         <div class="p-col-12 p-md-6 p-lg-4" style="padding-top: 5px;">
             <p style="font-size: 16px;">Sort by</p>
@@ -12,7 +12,8 @@
 <div>
     <div style="width: 80%; margin: 0 auto;">
         <app-single-article *ngFor="let article of articlesArray" [article]="article"></app-single-article>
-        <div style="margin-top: 5px; margin-bottom: 5px; background-color: #f5f5f5;" *ngIf="articlesArray">
+        <h2 *ngIf="articlesLength == 0">Ooops! No articles found for {{ searchValue }}</h2>
+        <div style="margin-top: 5px; margin-bottom: 5px; background-color: #f5f5f5;" *ngIf="articlesLength >= 10">
             <p-paginator [rows]="10" [totalRecords]="articlesLength" (onPageChange)="paginate($event)" [pageLinkSize]="4"></p-paginator>
         </div>
     </div>
