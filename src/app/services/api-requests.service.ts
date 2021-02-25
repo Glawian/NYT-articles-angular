@@ -11,7 +11,7 @@ export class ApiRequestsService {
   from: string;
   to: string;
   sort = 'newest';
-  private token = 'eqJAUdFBmQaSUIPYf9xwdkDp7UODq28W';
+  private token = '';
   constructor(private http: HttpClient) { }
 
   FormatDateFrom(dateFrom) {
